@@ -3,81 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Negocio Digital | Soluciones Legales y Tecnológicas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Tu Negocio Digital | Ecosistemas Legales & Tecnológicos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --rosa-tnd: #e95d78;
             --morado-tnd: #4a344d;
-            --fondo-ligero: #f9f9f9;
+            --gris-fondo: #f8f9fa;
+            --texto-oscuro: #2d3436;
         }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; color: var(--morado-tnd); background-color: white; line-height: 1.6; }
-        
-        /* Navbar / Logo */
-        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-        .logo { height: 60px; }
 
-        /* Hero Section */
-        .hero { text-align: center; padding: 80px 10%; background: linear-gradient(135deg, #fff 0%, #fff0f3 100%); }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--morado-tnd); }
-        .hero p { font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 2rem; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--texto-oscuro); line-height: 1.6; overflow-x: hidden; }
 
-        /* Servicios */
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 10%; }
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--rosa-tnd); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 2.5rem; color: var(--rosa-tnd); margin-bottom: 20px; }
-        .card h3 { margin-top: 0; color: var(--morado-tnd); }
+        /* HEADER */
+        header { 
+            padding: 1rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo-container img { height: 70px; }
 
-        /* Botón WhatsApp Flotante */
-        .btn-ws { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
+        /* HERO SECTION */
+        .hero {
+            padding: 100px 5% 150px;
+            background: radial-gradient(circle at top right, #fff0f3, #ffffff);
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            color: var(--morado-tnd); 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            font-weight: 800;
+        }
+        .hero p { 
+            font-size: 1.3rem; 
+            color: #636e72; 
+            max-width: 700px; 
+            margin: 0 auto 40px; 
+        }
+        .cta-main {
+            background: var(--rosa-tnd);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(233, 93, 120, 0.3);
+        }
+        .cta-main:hover { transform: scale(1.05); background: var(--morado-tnd); }
 
-        /* Footer */
-        footer { background: var(--morado-tnd); color: white; text-align: center; padding: 40px 10%; margin-top: 50px; }
-        .contact-info { margin-bottom: 20px; }
-        .contact-info a { color: var(--rosa-tnd); text-decoration: none; font-weight: bold; }
+        /* FEATURES / SERVICES */
+        .services {
+            margin-top: -80px;
+            padding: 0 5% 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border: 1px solid #f1f1f1;
+            text-align: left;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--rosa-tnd); }
+        .icon-box {
+            width: 70px; height: 70px;
+            background: #fff0f3;
+            border-radius: 15px;
+            display: flex; justify-content: center; align-items: center;
+            margin-bottom: 25px;
+        }
+        .icon-box i { font-size: 30px; color: var(--rosa-tnd); }
+        .service-card h3 { color: var(--morado-tnd); margin-bottom: 15px; font-size: 1.5rem; }
+        .service-card p { color: #636e72; font-size: 1rem; }
+
+        /* TECH SECTION */
+        .tech-banner {
+            background: var(--morado-tnd);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+        }
+        .tech-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .odoo-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--rosa-tnd);
+            margin-top: 20px;
+        }
+
+        /* CONTACT */
+        .contact-section { padding: 100px 5%; text-align: center; }
+        .contact-grid { display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap; }
+        .contact-item { font-size: 1.2rem; color: var(--morado-tnd); text-decoration: none; font-weight: 600; }
+        .contact-item i { color: var(--rosa-tnd); margin-right: 10px; }
+
+        /* WHATSAPP */
+        .ws-float {
+            position: fixed; bottom: 40px; right: 40px;
+            background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-decoration: none; transition: 0.3s;
+        }
+        .ws-float:hover { transform: rotate(15deg) scale(1.1); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .services { margin-top: -40px; }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <img src="https://raw.githubusercontent.com/tunegodigitalec-droid/Web/main/Logo%20TND%20200x200.png" alt="Tu Negocio Digital Logo" class="logo">
-    </nav>
+    <header>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/tunegodigitalec-droid/Web/main/Logo%20TND%20200x200.png" alt="Tu Negocio Digital">
+        </div>
+        <a href="https://wa.me/593992743007" class="contact-item" style="font-size: 0.9rem;">
+            <i class="fas fa-headset"></i> Soporte Live
+        </a>
+    </header>
 
     <section class="hero">
-        <h1>Transformamos la legalidad en eficiencia digital</h1>
-        <p>En <strong>Tu Negocio Digital</strong>, damos fe y certidumbre de actos legales lícitos mediante tecnología de punta, rapidez y seguridad total.</p>
+        <h1>Licitud y Certeza en cada Acto Digital</h1>
+        <p>Expertos en arquitectura de soluciones digitales y servicios legales de alta velocidad. Creamos ecosistemas donde la tecnología y la ley trabajan para ti.</p>
+        <a href="mailto:mramirez@tunegociodigital.com.ec" class="cta-main">Solicitar Consultoría Técnica</a>
     </section>
 
     <section class="services">
-        <div class="card">
-            <i class="fas fa-file-signature"></i>
+        <div class="service-card">
+            <div class="icon-box"><i class="fas fa-bolt"></i></div>
             <h3>Firmas One Shot</h3>
-            <p>La revolución de la firma sin firma. Seguridad jurídica inmediata para tus procesos digitales sin complicaciones burocráticas.</p>
+            <p>Implementamos soluciones de "Firma sin Firma". Seguridad jurídica total sin fricciones para el usuario final.</p>
         </div>
-        <div class="card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Arquitectos de Soluciones</h3>
-            <p>Diseñamos ecosistemas a tu medida. Implementamos tecnología de punta e integramos Odoo para que tu operación sea impecable.</p>
+        <div class="service-card">
+            <div class="icon-box"><i class="fas fa-microchip"></i></div>
+            <h3>Arquitectura Digital</h3>
+            <p>Diseñamos tu ecosistema tecnológico desde cero. Especialistas en integración de <strong>Odoo</strong> con tecnología de punta.</p>
         </div>
-        <div class="card">
-            <i class="fas fa-handshake"></i>
-            <h3>Asóciate con Nosotros</h3>
-            <p>¿Tienes una idea que cambie las reglas de tu comunidad? Contáctanos y te ayudamos a materializar tu proyecto.</p>
+        <div class="service-card">
+            <div class="icon-box"><i class="fas fa-rocket"></i></div>
+            <h3>Hub de Innovación</h3>
+            <p>¿Tienes una idea disruptiva? Somos tus aliados técnicos y legales para cambiar las reglas de tu comunidad.</p>
         </div>
     </section>
 
-    <footer>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> <a href="mailto:mramirez@tunegociodigital.com.ec">mramirez@tunegociodigital.com.ec</a></p>
-            <p><i class="fas fa-mouse-pointer"></i> Servicio 100% Digital desde Ecuador</p>
+    <section class="tech-banner">
+        <div class="tech-content">
+            <h2>Tecnología que da Certidumbre</h2>
+            <p>No somos solo consultores, somos arquitectos de tu libertad operativa.</p>
+            <div class="odoo-badge">Partner Especialista en Odoo Ecosystems</div>
         </div>
-        <p>&copy; 2026 Tu Negocio Digital - Miguel Ángel Ramírez</p>
-    </footer>
+    </section>
 
-    <a href="https://wa.me/593992743007" class="btn-ws" target="_blank">
+    <section class="contact-section">
+        <h2>¿Listo para el siguiente nivel?</h2>
+        <div class="contact-grid">
+            <a href="mailto:mramirez@tunegociodigital.com.ec" class="contact-item">
+                <i class="fas fa-envelope"></i> mramirez@tunegociodigital.com.ec
+            </a>
+            <span class="contact-item">
+                <i class="fas fa-globe"></i> 100% Operación Digital
+            </span>
+        </div>
+    </section>
+
+    <a href="https://wa.me/593992743007" class="ws-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8rem; border-top: 1px solid #eee;">
+        &copy; 2026 Tu Negocio Digital - Miguel Ángel Ramírez<br>
+        Fe y Certidumbre Legal al Bajo Costo
+    </footer>
 
 </body>
 </html>
