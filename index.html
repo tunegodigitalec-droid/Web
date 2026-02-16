@@ -3,22 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Negocio Digital - Muy Pronto</title>
+    <title>Tu Negocio Digital | Soluciones Legales y Tecnológicas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-        .container { background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 600px; }
-        h1 { color: #1a365d; margin-bottom: 1rem; }
-        p { font-size: 1.2rem; line-height: 1.6; color: #4a5568; }
-        .highlight { color: #2b6cb0; font-weight: bold; }
-        .footer { margin-top: 2rem; font-size: 0.9rem; color: #a0aec0; }
+        :root {
+            --rosa-tnd: #e95d78;
+            --morado-tnd: #4a344d;
+            --fondo-ligero: #f9f9f9;
+        }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; color: var(--morado-tnd); background-color: white; line-height: 1.6; }
+        
+        /* Navbar / Logo */
+        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .logo { height: 60px; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 80px 10%; background: linear-gradient(135deg, #fff 0%, #fff0f3 100%); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--morado-tnd); }
+        .hero p { font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 2rem; }
+
+        /* Servicios */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 10%; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--rosa-tnd); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 2.5rem; color: var(--rosa-tnd); margin-bottom: 20px; }
+        .card h3 { margin-top: 0; color: var(--morado-tnd); }
+
+        /* Botón WhatsApp Flotante */
+        .btn-ws { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
+
+        /* Footer */
+        footer { background: var(--morado-tnd); color: white; text-align: center; padding: 40px 10%; margin-top: 50px; }
+        .contact-info { margin-bottom: 20px; }
+        .contact-info a { color: var(--rosa-tnd); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Tu Negocio Digital</h1>
-        <p>Estamos trabajando para ofrecerte un servicio legal <span class="highlight">lícito, rápido y seguro</span> a un precio justo.</p>
-        <p>Muy pronto daremos fe y certidumbre de tus actos legales en este nuevo espacio.</p>
-        <div class="footer">© 2026 Tu Negocio Digital - Miguel Ángel Ramírez</div>
-    </div>
+
+    <nav>
+        <img src="https://raw.githubusercontent.com/tunegodigitalec-droid/Web/main/Logo%20TND%20200x200.png" alt="Tu Negocio Digital Logo" class="logo">
+    </nav>
+
+    <section class="hero">
+        <h1>Transformamos la legalidad en eficiencia digital</h1>
+        <p>En <strong>Tu Negocio Digital</strong>, damos fe y certidumbre de actos legales lícitos mediante tecnología de punta, rapidez y seguridad total.</p>
+    </section>
+
+    <section class="services">
+        <div class="card">
+            <i class="fas fa-file-signature"></i>
+            <h3>Firmas One Shot</h3>
+            <p>La revolución de la firma sin firma. Seguridad jurídica inmediata para tus procesos digitales sin complicaciones burocráticas.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-project-diagram"></i>
+            <h3>Arquitectos de Soluciones</h3>
+            <p>Diseñamos ecosistemas a tu medida. Implementamos tecnología de punta e integramos Odoo para que tu operación sea impecable.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-handshake"></i>
+            <h3>Asóciate con Nosotros</h3>
+            <p>¿Tienes una idea que cambie las reglas de tu comunidad? Contáctanos y te ayudamos a materializar tu proyecto.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:mramirez@tunegociodigital.com.ec">mramirez@tunegociodigital.com.ec</a></p>
+            <p><i class="fas fa-mouse-pointer"></i> Servicio 100% Digital desde Ecuador</p>
+        </div>
+        <p>&copy; 2026 Tu Negocio Digital - Miguel Ángel Ramírez</p>
+    </footer>
+
+    <a href="https://wa.me/593992743007" class="btn-ws" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
